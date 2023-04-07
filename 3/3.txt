@@ -1,0 +1,183 @@
+Color a span/div element content when a user moves the mouse over the element.
+            HTML:
+
+            html
+                <span class="color-change">Hover over me</span>
+            CSS:
+
+            css
+            .color-change:hover {
+            color: red;
+            }
+Use prompt to read a value from user and display it in the span element.
+            HTML:
+
+        
+            
+            <label for="input">Enter a value:</label>
+            <input type="text" id="input">
+            <button onclick="displayValue()">Submit</button>
+            <br>
+            <span id="output"></span>
+            JavaScript:
+
+            
+            
+            function displayValue() {
+            const inputValue = prompt("Enter a value:");
+            const outputElement = document.getElementById("output");
+            outputElement.textContent = inputValue;
+            }
+Display the mouse X and Y coordinates in a <span> tag when you click on a <h1> tag which contains a paragraph.
+
+            HTML:
+
+
+            <h1 onclick="displayCoords(event)">Click me
+            <p>Some text here</p>
+            </h1>
+            <br>
+            <span id="coords"></span>
+            JavaScript:
+
+            function displayCoords(event) {
+            const coordsElement = document.getElementById("coords");
+            const x = event.clientX;
+            const y = event.clientY;
+            coordsElement.textContent = `X: ${x}, Y: ${y}`;
+            }
+Write a Javascript code for character counts in the textarea.
+            function countCharacters() {
+            const textarea = document.getElementById("myTextarea");
+            const charCountElement = document.getElementById("charCount");
+            const charCount = textarea.value.length;
+            charCountElement.textContent = charCount;
+            }
+Convert a given number from decimal to binary or hexadecimal
+            const decimalNumber = 42;
+            const binaryNumber = decimalNumber.toString(2);
+            console.log(binaryNumber); // Output: "101010"
+With Javascript write a simple from validation
+
+            HTML:
+
+            <form onsubmit="validateForm(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <br>
+            <button type="submit">Submit</button>
+            </form>
+            JavaScript:
+
+            function validateForm(event) {
+            event.preventDefault();
+            
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            
+            const nameValue = nameInput.value.trim();
+            const emailValue = emailInput.value.trim();
+            
+            if (nameValue === "" || emailValue === "") {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+            
+            if (!validateEmail(emailValue)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            
+            // If form is valid, submit the form
+            event.target.submit();
+            }
+
+            function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+            }
+In your HTML Add two buttons, where first button action for full screen mode and the second button for exit from full screen mode.
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <title>Full Screen Example</title>
+            </head>
+            <body>
+            <h1>Welcome to Full Screen Example!</h1>
+            <button id="fullScreenBtn" onclick="openFullscreen()">Full Screen</button>
+            <button id="exitFullScreenBtn" onclick="closeFullscreen()">Exit Full Screen</button>
+            <p>This is a paragraph.</p>
+            
+            <script>
+                /* JavaScript code for full screen mode */
+                function openFullscreen() {
+                const elem = document.documentElement;
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+                }
+                
+                /* JavaScript code for exit full screen mode */
+                function closeFullscreen() {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+                }
+            </script>
+            </body>
+            </html>
+When user press any key in your html page show a alert that Invalid Key Pressed, but when user press spacebar show an alert Thank You..!! and close the current window.
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <title>Key Press Example</title>
+                </head>
+                <body onkeypress="handleKeyPress(event)">
+                <h1>Welcome to Key Press Example!</h1>
+                <p>Please press any key on your keyboard (except the spacebar).</p>
+                
+                <script>
+                    /* JavaScript code for handling key press events */
+                    function handleKeyPress(event) {
+                    if (event.keyCode === 32) { /* spacebar key */
+                        alert("Thank You..!!");
+                        window.close(); /* close the current window */
+                    } else {
+                        alert("Invalid Key Pressed");
+                    }
+                    }
+                </script>
+                </body>
+                </html>
+When a cursor is moved over an content, allow the user to edit the content in HTML page.
+NOTE: Input element should not be used.
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <title>Content Edit Example</title>
+                </head>
+                <body>
+                <h1>Welcome to Content Edit Example!</h1>
+                <p onmouseover="makeEditable(this)">This paragraph can be edited when you move your cursor over it.</p>
+                
+                <script>
+                    /* JavaScript code for making content editable */
+                    function makeEditable(element) {
+                    element.contentEditable = true; /* make the element editable */
+                    element.focus(); /* set focus to the element to start editing */
+                    }
+                </script>
+                </body>
+                </html>

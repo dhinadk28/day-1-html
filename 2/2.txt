@@ -1,0 +1,154 @@
+ Write a css rule of rounded rectangle, dashed border, grayscale for all image tags in your webpage.
+
+            img {
+        border-radius: 10px;
+        border: 2px dashed #ccc;
+        filter: grayscale(100%);
+        }
+
+   Write a media rule to change only the font size of web page when it's resized.
+    
+                @media (max-width: 600px) {
+                body {
+                    font-size: 14px;
+                }
+                }
+    Use HTML & CSS to display different types of cursors.
+
+                HTML:
+
+                html
+
+                <div class="cursor-example">
+                <p>Hover over me to see different cursor types!</p>
+                </div>
+                CSS:
+
+                css
+
+                .cursor-example {
+                width: 300px;
+                height: 200px;
+                background-color: #eee;
+                text-align: center;
+                padding: 50px;
+                }
+
+                .cursor-example p {
+                cursor: pointer; /* default cursor */
+                }
+
+                .cursor-example p:hover {
+                cursor: help; /* help cursor */
+                }
+
+                .cursor-example p:active {
+                cursor: grab; /* grab cursor */
+                }
+
+                .cursor-example p:focus {
+                cursor: not-allowed; /* not-allowed cursor */
+                }
+
+ Write a CSS class that meets the Box Model requirement for all the div tags in your page.
+
+Use certain properties padding, margin, border.               
+                .box-model {
+                padding: 10px;
+                margin: 10px;
+                border: 1px solid #ccc;
+                }
+
+
+
+Write a CSS class to change size of font, color font family when mouse moves over of span tag in your webpage.
+                css
+
+                .hover-effect:hover {
+                font-size: 1.2em;
+                color: #f00;
+                font-family: "Arial", sans-serif;
+                }
+
+Write a CSS 2D rule with translate() property to move an element.
+
+                .move-element {
+                transform: translate(20px, 40px);
+                }
+
+Define a CSS class to show tooltip when mouse moved over the elements.
+                .tooltip {
+                position: relative;
+                }
+
+                .tooltip::after {
+                content: attr(data-tooltip);
+                display: none;
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 5px 10px;
+                background-color: #000;
+                color: #fff;
+                font-size: 14px;
+                }
+
+                .tooltip:hover::after {
+                display: block;
+                }
+For the below shown image apply clip property with values of right & bottom and display the output.
+                .image-clip {
+                position: relative;
+                clip: rect(auto, 50px, 50px, auto);
+                }
+Use CSS to set a background image should be centered and should not repeat.
+                body {
+                background-image: url('your-image-url-here');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                }
+Write CSS rules to set the direction of the flexible items inside the <div></div> element in reverse order.
+
+                div {
+                display: flex;
+                flex-direction: row-reverse;
+                }
+Give the <div> element an image border using the image "border.png". Slice the image at 30px and stretch it.
+
+                div {
+                border: 30px solid transparent;
+                border-image: url('border.png') 30 stretch;
+                }
+Give the <div> element a rounded corner (25px radius) on the bottom left side.
+
+
+                div {
+                border-bottom-left-radius: 25px;
+                }
+Remove the transparency/opacity of the <img> element when the user hovers over it with the mouse pointer.
+
+                img:hover {
+                opacity: 1;
+                }
+Position the <div> element all the way to the right using absolute positioning.
+
+                div {
+                position: absolute;
+                right: 0;
+                }
+Add a scrollbar to the <div> element.
+
+                div {
+                overflow: scroll;
+                }
+Set a linear gradient background for the <div> element, going from the top to bottom, transitioning from "white" to "red" to "blue" to "green".
+                div {
+                background: linear-gradient(to bottom, white, red, blue, green);
+                }
+With the transform property, rotate the <div> element 45 degrees.
+
+                div {
+                transform: rotate(45deg);
+                }
